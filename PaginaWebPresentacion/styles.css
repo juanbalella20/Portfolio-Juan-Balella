@@ -1,0 +1,107 @@
+/* Estilos globales */
+html {
+    scroll-behavior: smooth;
+    /*esto lo baja mas lento*/
+}
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Estilos para los h1 dentro de secciones */
+#home h1 {
+    font-size: 36px; /* Tamaño más grande */
+    text-align: left; /* Alineación a la izquierda */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+    color: #333; /* Puedes ajustar el color si lo necesitas */
+}
+
+
+
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+/* Sidebar */
+nav {
+    height: 100vh; /* Ocupa toda la altura */
+    width: 250px; /* Ancho del sidebar */
+    background: url('imagenes/imagen de fondo negro.png') no-repeat center center; /* Fondo con imagen */
+    background-size: cover; /* Escala la imagen para cubrir todo el sidebar */
+    color: #fff; /* Texto blanco */
+    position: fixed; /* Fija al lado izquierdo */
+    top: 0;
+    left: 0;
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Alinea elementos en columna */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    align-items: center; /* Centra horizontalmente */
+    padding-top: 100px; /* Agrega espacio superior */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color:  #5D99C2;/* Color hover */
+}
+
+/* Contenido principal */
+section {
+    margin-left: 270px; /* Espaciado para evitar superposición con el sidebar */
+    padding: 20px;
+}
+
+#home {
+    background: url('imagenes/joystick.jpg') no-repeat center center; /* Fondo con imagen */
+    background-size: cover; /* Escala la imagen para cubrir todo el sidebar */
+    padding: 50px;
+    text-align: center;
+
+}
+
+#about,
+#knowledge,
+#projects,
+#contact {
+    padding: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Animación de frases */
+#frase {
+    font-family: "Inconsolata", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+            "wdth" 100;
+    margin-top: 20px;
+    font-size: 22px;
+    text-align: left;
+
+
+}
