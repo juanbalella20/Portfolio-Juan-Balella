@@ -1,4 +1,4 @@
-// Arreglo de frases motivacionales
+// ----- Animación de frases motivacionales -----
 const frases = [
   "The best mistake is the one that teaches you something new.",
   "Don't fear the code; fear not trying.",
@@ -12,22 +12,68 @@ const frases = [
   "A bug is an opportunity to learn, not a failure."
 ];
 
-// Elemento HTML donde se mostrarán las frases
 const elementoFrase = document.getElementById("frase");
 
-// Función para mostrar todas las frases letra por letra
 async function mostrarFrases() {
-  for (let i = 0; i < frases.length; i++) { // Recorre el array de frases
-    const frase = frases[i];
-    for (let j = 0; j < frase.length; j++) { // Recorre cada letra de la frase
-      elementoFrase.innerText += frase[j]; // Añade la letra actual
-      await new Promise(resolve => setTimeout(resolve, 50)); // Espera 50ms
+  for (const frase of frases) {
+    for (const char of frase) {
+      elementoFrase.textContent += char;
+      await new Promise(resolve => setTimeout(resolve, 50)); // 50ms por carácter
     }
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Pausa 1 segundo tras la frase
-    elementoFrase.innerText = ""; // Limpia el contenedor antes de la siguiente frase
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Pausa de 1 segundo
+    elementoFrase.textContent = "";
   }
-  mostrarFrases(); // Reinicia el ciclo infinito
+  mostrarFrases(); // Reinicia el ciclo
 }
 
-// Inicia el ciclo al cargar la página
 mostrarFrases();
+
+// ----- Intersection Observer para animación fade-in -----
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = {
+  threshold: 0.3
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+// ----- Menú hamburguesa para móviles -----
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// ----- Botón Back to Top -----
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    backToTop.style.display = 'block';
+  } else {
+    backToTop.style.display = 'none';
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ----- Preloader: Oculta el preloader cuando se carga la página -----
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = '0';
+  setTimeout(() => {
+    preloader.style.display = 'none';
+  }, 500);
+});

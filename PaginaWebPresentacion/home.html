@@ -3,63 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio and Curriculum of Juan Balella, Full Stack Developer.">
   <title>Portfolio | Juan Balella</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Preconexión y carga de fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <!-- Se cargan dos familias tipográficas: Inconsolata para el cuerpo y Montserrat para los títulos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome para los íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="imagenes/red-removebg-preview.png" type="image/x-icon">
+
 </head>
 <body>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
-<!-- Navegación -->
+<!-- Navegación (Sidebar/Responsive) -->
 <nav>
-  <ul>
+  <!-- Botón hamburguesa para móviles -->
+  <div id="menuToggle" class="menu-toggle"><i class="fas fa-bars"></i></div>
+  <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#knowledge">Knowledge</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank" class="facebook">
+      <div class="layer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="fab fa-facebook-f"></span>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/juan.balella/" target="_blank" class="instagram">
+      <div class="layer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="fab fa-instagram"></span>
+      </div>
+    </a>
+    <a href="https://ar.linkedin.com/in/juan-balella-84ab62239" target="_blank" class="linkedin">
+      <div class="layer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="fab fa-linkedin-in"></span>
+      </div>
+    </a>
+  </div>
 </nav>
 
-<!-- Secciones -->
-<section id="home">
-  <h1>Welcome</h1>
-  <div id="frase"></div>
+<!-- Sección Home (Hero) -->
+<section id="home" class="section-home fade-in">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <!-- Columna de presentación personal -->
+    <div class="profile-section">
+      <img src="imagenes/fotoPerfil.jpeg" alt="Profile Picture" class="profile-pic">
+      <div class="intro-text">
+        <h1>Juan Balella</h1>
+        <h2>Full Stack Developer</h2>
+        <div class="university-info">
+          <img src="imagenes/ubaLogoFondoBlanco.png" alt="UBA Logo" class="uba-logo">
+          <p>University of Buenos Aires</p>
+        </div>
+      </div>
+    </div>
+    <!-- Columna de frases dinámicas -->
+    <div class="dynamic-phrase">
+      <div id="frase"></div>
+    </div>
+  </div>
+  <!-- Indicador para hacer scroll -->
+  <div class="scroll-down">
+    <i class="fas fa-chevron-down"></i>
+  </div>
 </section>
 
-<section id="about">
+<!-- Sección About -->
+<section id="about" class="section-content fade-in">
   <h1>About</h1>
-  <p>Hi, I’m Juan Balella, a passionate Full Stack Developer currently pursuing a
-    degree in Computer Engineering at the University of Buenos Aires.
-    With a strong dedication to crafting efficient and innovative software solutions,
-    I thrive on the challenges of building technology that makes a difference.
-
-    Whether it's front-end interfaces or back-end systems, I bring creativity,
-    precision, and a love for coding to every project.
-    Let’s create something amazing together!</p>
+  <p>
+    Hi, I’m Juan Balella, a passionate Full Stack Developer currently pursuing a degree in Computer Engineering at the University of Buenos Aires.
+    With a strong dedication to crafting efficient and innovative software solutions, I thrive on the challenges of building technology that makes a difference.
+    Whether it's front-end interfaces or back-end systems, I bring creativity, precision, and a love for coding to every project.
+    Let’s create something amazing together!
+  </p>
 </section>
 
-<section id="knowledge">
+<!-- Sección Knowledge con carrusel de logos -->
+<section id="knowledge" class="section-content fade-in">
   <h1>Knowledge</h1>
   <p>Mis conocimientos incluyen:</p>
-  <ul>
-    <li>JavaScript</li>
-    <li>Git</li>
-    <li>Python</li>
-    <li>C++</li>
-  </ul>
+  <div class="carousel-container">
+    <div class="carousel">
+      <!-- Bloque de logos duplicado para efecto continuo -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+      <!-- Duplicado para lograr loop infinito -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+    </div>
+  </div>
 </section>
 
-<section id="projects">
+<!-- Sección Projects con tarjetas de ejemplo -->
+<section id="projects" class="section-content fade-in">
   <h1>Projects</h1>
   <p>Aquí puedes ver algunos proyectos destacados.</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x200" alt="Project 1">
+      <h3>Project One</h3>
+      <p>Descripción breve del proyecto.</p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x200" alt="Project 2">
+      <h3>Project Two</h3>
+      <p>Descripción breve del proyecto.</p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x200" alt="Project 3">
+      <h3>Project Three</h3>
+      <p>Descripción breve del proyecto.</p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
+<!-- Sección Contact -->
+<section id="contact" class="section-content fade-in">
   <h1>Contact</h1>
-  <p>Puedes contactarme en: <br> juan@example.com</p>
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
 </section>
+
+<!-- Botón Back to Top -->
+<button id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
 <script src="script.js"></script>
 </body>
