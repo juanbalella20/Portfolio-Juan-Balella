@@ -77,3 +77,44 @@ window.addEventListener('load', () => {
     preloader.style.display = 'none';
   }, 500);
 });
+
+
+// Inicializa EmailJS (reemplaza YOUR_USER_ID con tu ID real)
+emailjs.init("YOUR_USER_ID");
+
+// Maneja el envío del formulario de contacto
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+  // Prepara los parámetros que serán enviados a través de EmailJS
+  const templateParams = {
+    from_name: document.getElementById("nombre").value,
+    from_email: document.getElementById("correo").value,
+    message: document.getElementById("mensaje").value,
+    to_email: "jbalella@fi.uba.ar"
+  };
+
+  // Envía el correo usando el servicio y la plantilla configurados en EmailJS
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      // Muestra una alerta estética al usuario
+      Swal.fire({
+        title: 'Message Sent!',
+        text: 'Your message has been sent successfully.',
+        icon: 'success',
+        confirmButtonColor: '#5D99C2'
+      });
+      // Opcional: reinicia el formulario
+      document.getElementById("contact-form").reset();
+    }, function(error) {
+      console.log('FAILED...', error);
+      Swal.fire({
+        title: 'Error',
+        text: 'There was an error sending your message. Please try again later.',
+        icon: 'error',
+        confirmButtonColor: '#5D99C2'
+      });
+    });
+});
+

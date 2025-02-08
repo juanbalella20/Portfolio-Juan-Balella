@@ -14,7 +14,6 @@
   <!-- Font Awesome para los íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="imagenes/red-removebg-preview.png" type="image/x-icon">
-
 </head>
 <body>
 <!-- Preloader -->
@@ -29,6 +28,7 @@
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#profile">Profile</a></li>
     <li><a href="#knowledge">Knowledge</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -102,19 +102,54 @@
   </p>
 </section>
 
+<!-- Sección Profile -->
+<section id="profile" class="section-content fade-in">
+  <h1>Profile</h1>
+  <div class="profile-card">
+    <div class="profile-details">
+      <p><strong>Name:</strong> Juan Balella</p>
+      <p><strong>Date of Birth:</strong> 20/04/2004</p>
+      <p><strong>Certificate:</strong> First Certificate completed</p>
+      <p><strong>Nationality:</strong> Argentinian</p>
+      <p><strong>University:</strong> University of Buenos Aires</p>
+    </div>
+    <div class="language-proficiency">
+      <div class="language">
+        <p><strong>English:</strong> 90%</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="language">
+        <p><strong>Spanish:</strong> 100%</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Sección Knowledge con carrusel de logos -->
 <section id="knowledge" class="section-content fade-in">
   <h1>Knowledge</h1>
-  <p>Mis conocimientos incluyen:</p>
+  <p>My knowledge includes:</p>
   <div class="carousel-container">
     <div class="carousel">
-      <!-- Bloque de logos duplicado para efecto continuo -->
+      <!-- First set of logos -->
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">
+
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
       <!-- Duplicado para lograr loop infinito -->
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
@@ -122,6 +157,13 @@
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">
+
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
     </div>
   </div>
 </section>
@@ -155,7 +197,7 @@
 <!-- Sección Contact -->
 <section id="contact" class="section-content fade-in">
   <h1>Contact</h1>
-  <form>
+  <form id="contact-form">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
 
@@ -169,9 +211,16 @@
   </form>
 </section>
 
+<!-- Carga de librerías para EmailJS y SweetAlert2 -->
+
+
+
+
 <!-- Botón Back to Top -->
 <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
 
 <script src="script.js"></script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

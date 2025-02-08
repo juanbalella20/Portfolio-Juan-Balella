@@ -231,7 +231,6 @@ section {
     color: var(--accent-color);
 }
 
-
 .intro-text h2 {
     font-size: 24px;
     margin: 5px 0;
@@ -315,7 +314,7 @@ section {
 .carousel {
     display: flex;
     align-items: center;
-    animation: scroll 20s linear infinite;
+    animation: scroll 10s linear infinite;  /* Duración reducida para mayor velocidad */
 }
 
 .carousel img {
@@ -493,4 +492,45 @@ section {
         flex-direction: column;
         gap: 40px;
     }
+}
+
+/* ----- Estilos para Profile Section Mejorada ----- */
+.profile-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+.profile-details p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.language-proficiency {
+    margin-top: 20px;
+}
+
+.language {
+    margin-bottom: 15px;
+}
+
+.language p {
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress {
+    height: 10px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
 }
